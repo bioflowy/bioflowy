@@ -1,0 +1,10 @@
+children:
+  - args:
+      - "./scripts/test.py"
+      - name: "pipe"
+        output: true
+  - args:
+      - "./scripts/test2.py"
+      - name: "pipe"
+        output: false
+      - "result.txt"
