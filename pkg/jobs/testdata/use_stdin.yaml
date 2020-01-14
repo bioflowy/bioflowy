@@ -1,0 +1,13 @@
+children:
+  - args:
+      - "sh"
+      - "-c"
+      - "echo  'this is stdin test' > $(pipe)"
+    outputs:
+      - "pipe"
+  - args:
+      - "sh"
+      - "-c"
+      - "nl > use_stdin.yaml.result"
+    stdin:
+      pipe: "pipe"

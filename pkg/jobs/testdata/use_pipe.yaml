@@ -1,0 +1,21 @@
+children:
+  - args:
+      - "sh"
+      - "-c"
+      - "echo 'this is test' > $(pipe)"
+    outputs:
+      - "pipe"
+  - args:
+      - "sh"
+      - "-c"
+      - "wc $(pipe) -w > $(pipe2)"
+    inputs:
+      - "pipe"
+    outputs:
+      - "pipe2"
+  - args:
+      - "sh"
+      - "-c"
+      - "awk '{print $1}' $(pipe2) > use_pipe.yaml.result"
+    inputs:
+      - "pipe2"

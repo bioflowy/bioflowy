@@ -1,0 +1,14 @@
+children:
+  - args:
+      - "./test.py"
+      - "$(pipe)"
+    stdout:
+      typo: "pipe"
+    outputs:
+      - "pipe"
+  - args:
+      - "./test2.py"
+      - "$(pipe)"
+      - "result.txt"
+    inputs:
+      - "pipe"

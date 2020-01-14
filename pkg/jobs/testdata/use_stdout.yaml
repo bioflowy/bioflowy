@@ -1,0 +1,12 @@
+children:
+  - args:
+      - "echo"
+      - "this stdout test"
+    stdout:
+      pipe: "pipe"
+  - args:
+      - "sh"
+      - "-c"
+      - "nl $(pipe) > use_stdout.yaml.result"
+    inputs:
+      - "pipe"
